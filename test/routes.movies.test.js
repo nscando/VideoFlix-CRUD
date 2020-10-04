@@ -14,18 +14,34 @@ describe('routes - movies', function () {
      const request = testServer(route);
 
      describe('GET /movies', function () {
-          it('should respond whith status 200', function (done) {
+          it('should respond with status 200', function (done) {
                request.get('/api/movies').expect(200, done)
           })
 
-          it('shoul respond with the list of movies', function (done) {
+          it('should respond with the list of movies', function (done) {
                request.get('/api/movies').end((err, res) => {
                     assert.deepEqual(res.body, {
                          data: moviesMock,
                          message: 'movies listed'
                     })
                     done();
-               })
-          })
-     })
+               });
+          });
+     });
+
+     // describe.only('POST /movies', function () {
+     //      it('should respond with 201 status', function (done) {
+     //           request.post('api/movies').expect(201, done)
+     //      })
+     //      it('should respond with movie ID created', function (done) {
+     //           request.post('/api/movies').end((err, res) => {
+     //                assert.deepEqual(res.body, {
+     //                     data: moviesMock[0].id,
+     //                     message: 'movie created'
+     //                });
+     //                done();
+     //           })
+     //      })
+
+     // })
 })

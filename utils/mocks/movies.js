@@ -162,19 +162,27 @@ const moviesMock = [
 function filteredMoviesMock(tag) {
      return moviesMock.filter(movie => movie.tags.includes(tag))
 }
+function finOneMovieMock(id) {
+     return moviesMock.find((movie) => movie.id === id);
+}
 
 class MoviesServiceMock {
      async getMovies() {
           return Promise.resolve(moviesMock)
      }
 
+     async getMovie({ movieId }) {
+          return await Promise.resolve(finOneMovieMock(movieId));
+     }
+
      async createMovie() {
-          return Promise.resolvee(moviesMock[0])
+          return Promise.resolve(moviesMock[0].id)
      }
 }
 
 module.exports = {
      moviesMock,
      filteredMoviesMock,
+     finOneMovieMock,
      MoviesServiceMock
 };
