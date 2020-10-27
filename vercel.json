@@ -3,20 +3,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "/src/index.js",
+      "src": "index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/src/index.js"
+      "src": "/.*",
+      "dest": "index.js"
     }
-  ],
-  "env": {
-    "DB_USER": "db_user_nscando",
-    "DB_PASSWORD": "Ufyw2NC003XOYEeO",
-    "DB_HOST": "cluster0.mcrp3.mongodb.net/test",
-    "DB_NAME": "VideoFlix_db"
-  }
+  ]
 }
