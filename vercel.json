@@ -4,9 +4,9 @@
   "builds": [{ "src": "index.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
   "env": {
-    "DB_USER": "@platzivideos-db-user",
-    "DB_PASSWORD": "@platzivideos-db-password",
-    "DB_HOST": "@platzivideos-db-host",
-    "DB_NAME": "@platzivideos-db-name"
+    "DB_USER": "@videoflix-db-user",
+    "DB_PASSWORD": "@videoflix-db-password",
+    "DB_HOST": "@videoflix-db-host",
+    "DB_NAME": "@videoflix-db-name"
   }
 }
